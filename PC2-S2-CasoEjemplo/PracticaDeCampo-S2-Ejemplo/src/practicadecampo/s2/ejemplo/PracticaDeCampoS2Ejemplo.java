@@ -20,6 +20,14 @@ public class PracticaDeCampoS2Ejemplo {
         
         // Mostrar los datos del carro
         miCarro.mostrarDatos();
+        
+        // Cambiar algunos atributos usando setters
+        miCarro.setMarca("Honda");
+        miCarro.setModelo("Civic");
+        miCarro.setAño(2022);
+        
+        // Volver a mostrar los datos actualizados
+        miCarro.mostrarDatos();
     }
     
 }
