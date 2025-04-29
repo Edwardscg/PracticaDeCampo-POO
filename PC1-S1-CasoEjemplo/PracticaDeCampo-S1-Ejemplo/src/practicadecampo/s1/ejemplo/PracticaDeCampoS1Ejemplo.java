@@ -16,13 +16,16 @@ public class PracticaDeCampoS1Ejemplo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner scanner = new Scanner(System.in);
+        ControladorCarros controlador = new ControladorCarros();
 
-        // Solicitar al usuario que ingrese su nombre
-        System.out.print("Ingresa tu nombre: ");
-        String nombre = scanner.nextLine();
+        Carro carro1 = new Carro("Toyota", "Corolla", 2020);
+        Carro carro2 = new Carro("Honda", "Civic", 2019);
 
-        System.out.println("¡Hola, " + nombre + "! Bienvenido a Java.");
+        controlador.agregarCarro(carro1);
+        controlador.agregarCarro(carro2);
+
+        controlador.listarCarros();
+
     }
     
 }
