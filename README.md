@@ -1,4 +1,4 @@
-# Práctica de Campo - Programación Orientada a Objetos (POO)
+# Práctica de Campo - Técnicas de Programación Orientada a Objetos
 
 Este repositorio contiene una colección de proyectos desarrollados como parte de la práctica de campo en el curso de Programación Orientada a Objetos.  
 
