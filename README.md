@@ -1,156 +1,126 @@
-Práctica de Campo - Programación Orientada a Objetos (POO)
+# Práctica de Campo - Programación Orientada a Objetos (POO)
 
-Este repositorio contiene una colección de proyectos desarrollados como parte de la práctica de campo en el curso de Programación Orientada a Objetos. 
+Este repositorio contiene una colección de proyectos desarrollados como parte de la práctica de campo en el curso de Programación Orientada a Objetos.  
 
 Cada carpeta representa un proyecto independiente que aborda diferentes conceptos y aplicaciones de la POO utilizando el lenguaje Java.
 
-ESTRUCTURA DEL REPOSITORIO
+---
+
+## ESTRUCTURA DEL REPOSITORIO
 
 A continuación, se describen las carpetas principales del repositorio y el propósito de cada una:
 
+---
 
-📁 PC1-S1 - Ejercicio de ejempplo Semana 1
+### 📁 PC1-S1 - Ejercicio de ejemplo Semana 1
 
-📌 Descripción General
+#### 📌 Descripción General
 
-Este programa en Java permite registrar y listar carros está compuesto por tres clases principales:
+Este programa en Java permite registrar y listar carros. Está compuesto por tres clases principales:
 
-Carro: representa un carro con atributos públicos.
+- *Carro*: representa un carro con atributos públicos.
+- *ControladorCarros*: permite almacenar y mostrar una lista de carros.
+- *Main*: contiene el método principal para ejecutar el programa.
 
-ControladorCarros: permite almacenar y mostrar una lista de carros.
+#### 🚗 Clase Carro
 
-Main: contiene el método principal para ejecutar el programa.
+- *Atributos públicos*: marca, modelo, año  
+- *Constructor*: Inicializa los valores del carro.  
+- **Método mostrarInformacion()**: Imprime los datos del carro.
 
-🚗 Clase Carro
+#### 🧑‍💼 Clase ControladorCarro
 
-Atributos públicos: marca, modelo, año
+- Usa una ArrayList para almacenar carros.  
+- agregarCarro(Carro): Agrega un carro a la lista.  
+- listarCarros(): Muestra todos los carros registrados, o un mensaje si la lista está vacía.
 
-Constructor: Inicializa los valores del carro.
+#### 🏁 Clase Main
 
-Método mostrarInformacion(): Imprime los datos del carro.
+- Crea instancias de Carro y las agrega al ControladorCarro.  
+- Llama a listarCarros() para mostrar la información en consola.
 
-🧑‍💼 Clase ControladorCarro
+---
 
-Usa una ArrayList para almacenar carros.
+### 📁 PC2-S2 - Ejercicio de ejemplo Semana 2
 
-agregarCarro(Carro): Agrega un carro a la lista.
+#### 📌 Descripción General
 
-listarCarros(): Muestra todos los carros registrados, o un mensaje si la lista está vacía.
+Este programa en Java demuestra el uso del *encapsulamiento* en una clase Carro, permitiendo proteger los atributos y acceder/modificarlos de forma controlada mediante getters y setters.
 
-🏁 Clase Main
+#### 🧱 Estructura del Programa
 
-Crea instancias de Carro y las agrega al ControladorCarro.
+##### 🚗 Clase Carro
 
-Llama a listarCarros() para mostrar la información en consola.
+*Descripción*: Representa un carro con atributos privados y métodos públicos para gestionarlos.
 
+- *🔐 Atributos (privados)*:
+  - String marca
+  - String modelo
+  - int año
 
-📁 PC2-S2 - Ejercicio de ejemplo Semana 2
+- *🛠 Métodos*:
+  - Constructor: Inicializa los atributos del carro.
+  - Getters: getMarca(), getModelo(), getAño()
+  - Setters: setMarca(), setModelo(), setAño()
+  - mostrarDatos(): Imprime la información actual del carro.
 
-Descripción General
+*✅ Encapsulamiento aplicado*: Los atributos son private, lo que impide su acceso directo desde fuera de la clase. En su lugar, se usan métodos get y set.
 
-Este programa en Java demuestra el uso del encapsulamiento en una clase Carro, permitiendo proteger los atributos y acceder/modificarlos de forma controlada mediante getters y setters.
+##### 🏁 Clase PracticaDeCampoS2Ejemplo (Main)
 
-🧱 Estructura del Programa
+*Descripción*: Ejecuta el programa demostrando cómo se crean y modifican objetos de tipo Carro.
 
-🚗 Clase Carro
+*🧪 Lógica principal*:
+- Se crea un carro con marca "Toyota", modelo "Corolla", y año 2020.
+- Se muestra su información con mostrarDatos().
+- Se cambian los valores usando los setters.
+- Se muestra la información actualizada del carro.
 
-Descripción: Representa un carro con atributos privados y métodos públicos para acceder o modificarlos.
+*🎯 Objetivo del diseño*:
+- Enseñar buenas prácticas de programación con encapsulamiento.
+- Evitar acceso directo a atributos sensibles.
+- Separar la lógica de datos de la lógica de presentación.
 
-🔐 Atributos (privados):
+---
 
-String marca
+### 📁 PC3-S3 - Ejercicio de ejemplo Semana 3
 
-String modelo
-
-int año
-
-🛠️ Métodos:
-
-Constructor: Inicializa los atributos del carro al crear una instancia.
-
-Getters: Métodos para obtener los valores (getMarca(), getModelo(), getAño()).
-
-Setters: Métodos para modificar los valores (setMarca(), setModelo(), setAño()).
-
-mostrarDatos(): Imprime la información actual del carro en consola.
-
-✅ Encapsulamiento aplicado: Los atributos son private, lo que impide su acceso directo desde fuera de la clase. En su lugar, se usan get y set.
-
-🏁 Clase PracticaDeCampoS2Ejemplo (Main)
-
-Descripción: Ejecuta el programa demostrando cómo se crean y modifican objetos de tipo Carro.
-
-🧪 Lógica principal:
-
-Se crea un carro con marca "Toyota", modelo "Corolla", y año 2020.
-
-Se muestra su información con mostrarDatos().
-
-Se cambian los valores usando los setters.
-
-Se muestra la información actualizada del carro.
-
-🎯 Objetivo del diseño
-
-Enseñar buenas prácticas de programación con encapsulamiento.
-
-Evitar acceso directo a atributos sensibles.
-
-Separar la lógica de datos de la lógica de presentación.
-
-
-📁 PC3-S3 - Ejercicio de ejemplo Semana 3
-
-📌 Descripción General
+#### 📌 Descripción General
 
 Este programa muestra cómo usar la clase RegistrarDatos para registrar y acceder a los datos de una persona (nombre y edad). Los datos se gestionan a través de getters y setters, con encapsulamiento de los atributos.
 
-🧱 Estructura del Programa
+#### 🧱 Estructura del Programa
 
-1. 🧑 Clase RegistrarDatos
-   
-Descripción: Representa los datos de una persona, con atributos privados y métodos públicos para gestionarlos.
+##### 1. 🧑 Clase RegistrarDatos
 
-🔐 Atributos (privados):
+*Descripción*: Representa los datos de una persona, con atributos privados y métodos públicos.
 
-String nombre: Almacena el nombre de la persona.
+- *🔐 Atributos (privados)*:
+  - String nombre
+  - int edad
 
-int edad: Almacena la edad de la persona.
+- *🛠 Métodos*:
+  - Constructor: puede ser con o sin parámetros.
+  - Getters: getNombre(), getEdad()
+  - Setters: setNombre(String nombre), setEdad(int edad)
 
-🛠️ Métodos:
+##### 2. 🏁 Clase Main (Uso de RegistrarDatos)
 
-Constructor: Se puede crear un objeto sin parámetros o con parámetros nombre y edad.
+*Descripción*: Se crea un objeto de tipo RegistrarDatos y se gestionan los atributos mediante setters y getters.
 
-Getters:
+*🧪 Lógica principal*:
+- Se crea un objeto RegistrarDatos sin parámetros.
+- Se establecen los valores usando setters.
+- Se muestran los datos utilizando getters.
+- Se crea otro objeto con parámetros y se muestra su información.
 
-getNombre(): Obtiene el nombre de la persona.
+---
 
-getEdad(): Obtiene la edad de la persona.
+### 📁 PC4-S4 - Ejercicio de ejemplo Semana 4
 
-Setters:
+Contenido por agregar.
 
-setNombre(String nombre): Establece el nombre de la persona.
+---
 
-setEdad(int edad): Establece la edad de la persona.
+### 📁 PC5-S5 - Ejercicio de ejemplo Semana 5
 
-3. 🏁 Clase Main (Uso de RegistrarDatos)
-   
-Descripción: En la clase Main, se crea un objeto de tipo RegistrarDatos y se gestionan los atributos utilizando los setters y getters.
-
-🧪 Lógica principal:
-
-Se crea un objeto RegistrarDatos sin parámetros.
-
-Se establecen los valores de nombre y edad usando los setters.
-
-Se muestran los datos utilizando los getters.
-
-Se crea otro objeto RegistrarDatos con parámetros para inicializar los atributos directamente.
-
-Se muestran los datos del nuevo objeto.
-
-
-📁 PC4-S4 - Ejercicio de ejemplo Semana 4
-
-
-📁 PC5-S5 - Ejercicio de ejemplo Semana 5
