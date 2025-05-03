@@ -113,6 +113,69 @@ Este programa muestra cómo usar la clase RegistrarDatos para registrar y accede
 
 ### 📁 PC4-S4 - Ejercicio de ejemplo Semana 4
 
+#### 📌 Descripción General
+
+Este programa en Java permite gestionar el registro de libros y usuarios, así como realizar préstamos y devoluciones de libros. Está compuesto por cuatro clases principales que encapsulan la lógica del sistema:
+
+- **Libro**: Representa un libro con sus datos y estado de disponibilidad.
+- **Usuario**: Representa un usuario que puede prestar o devolver libros.
+- **Biblioteca**: Controla la lógica de almacenamiento, préstamo y devolución de libros.
+- **Main**: Contiene el menú de opciones para interactuar con el sistema.
+
+---
+
+#### 🧱 Estructura del Programa
+
+1. 📚 **Clase Libro**
+
+   - **Descripción**: Representa un libro con atributos relacionados a su identificación, autor y estado de disponibilidad.
+   - **Atributos (privados)**:
+     - `int id_libro`: Identificador del libro.
+     - `String titulo`: Título del libro.
+     - `String autor`: Autor del libro.
+     - `boolean disponibilidad`: Estado de préstamo (disponible o no).
+   - **Métodos**:
+     - **Constructor**: Inicializa los atributos y establece la disponibilidad como `true` por defecto.
+     - **Getters y Setters**: Para acceder y modificar todos los atributos.
+     - `toString()`: Devuelve una representación en texto del libro.
+
+2. 👤 **Clase Usuario**
+
+   - **Descripción**: Representa a un usuario que puede prestar o devolver libros.
+   - **Atributos (privados)**:
+     - `int id_user`: Identificador del usuario.
+     - `String nombre_user`: Nombre del usuario.
+     - `ArrayList<Libro> lista_libros_prestados`: Lista de libros que el usuario ha prestado.
+   - **Métodos**:
+     - `prestarLibro(Libro libro)`: Añade un libro a la lista de libros prestados.
+     - `devolverLibro(Libro libro)`: Remueve un libro de la lista de libros prestados.
+     - **Getters y Setters**: Para acceder y modificar los atributos.
+     - `toString()`: Devuelve una representación textual del usuario.
+
+3. 🏛️ **Clase Biblioteca**
+
+   - **Descripción**: Gestiona el almacenamiento, préstamo y devolución de libros.
+   - **Atributos**:
+     - `ArrayList<Libro> listaLibros`: Lista de todos los libros registrados.
+     - `ArrayList<Usuario> listaUsuarios`: Lista de todos los usuarios registrados.
+   - **Métodos**:
+     - `registrarLibro(Libro libro)`: Añade un libro a la biblioteca.
+     - `registrarUsuario(Usuario usuario)`: Registra un nuevo usuario.
+     - `prestarLibro(String titulo, Usuario usuario)`: Presta un libro disponible a un usuario.
+     - `devolverLibro(String titulo, Usuario usuario)`: Permite que un usuario devuelva un libro.
+     - `librosDisponibles()`: Muestra los libros disponibles.
+     - `librosPrestadosPorUsuario()`: Muestra los libros que tiene cada usuario.
+
+4. 🖥️ **Clase Main**
+
+   - **Descripción**: Permite la interacción con el sistema mediante un menú de consola.
+   - **Lógica principal**:
+     - Presenta un menú para registrar libros, registrar usuarios, prestar libros, devolver libros y visualizar los datos registrados.
+     - Utiliza la clase `Scanner` para la entrada de datos.
+     - Crea nuevas instancias de `Libro` y `Usuario` en cada registro.
+
+### 📁 PC5-S5 - Ejercicio de ejemplo Semana 5
+
 #### CASO 1
 
 ##### 📌 Descripción General
@@ -244,5 +307,3 @@ Este programa permite registrar datos de asistentes a un evento, validando corre
   - Imprime la lista total de asistentes registrados.
 
 ---
-
-### 📁 PC5-S5 - Ejercicio de ejemplo Semana 5
