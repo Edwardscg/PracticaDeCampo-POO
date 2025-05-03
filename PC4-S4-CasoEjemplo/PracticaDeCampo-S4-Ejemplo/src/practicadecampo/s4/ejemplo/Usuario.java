@@ -13,26 +13,20 @@ public class Usuario {
     private int id_user;
     private String nombre_user;
     private int cantidad_libros_prestados;
-    
-    private ArrayList<Libro> lista_libros_prestados = new ArrayList();
+    private ArrayList<Libro> lista_libros_prestados = new ArrayList<>();
 
     public ArrayList<Libro> getLista_libros_prestados() {
         return lista_libros_prestados;
     }
 
-    public void setLista_libros_prestados(Libro l) {
-        this.lista_libros_prestados.add(l);
-    }
-    
-    
-    
-    void AdquirirLibro (Libro libro){
+    public void AdquirirLibro(Libro libro) {
         lista_libros_prestados.add(libro);
-        this.cantidad_libros_prestados += 1;
+        this.cantidad_libros_prestados++;
     }
-    void DevolverLibro (Libro libro){
+
+    public void DevolverLibro(Libro libro) {
         lista_libros_prestados.remove(libro);
-        this.cantidad_libros_prestados -= 1;
+        this.cantidad_libros_prestados--;
     }
 
     public int getId_user() {
@@ -55,9 +49,7 @@ public class Usuario {
         return cantidad_libros_prestados;
     }
 
-    public void setCantidadLibros_prestados(int libros_prestados) {
-        this.cantidad_libros_prestados = libros_prestados;
+    public String toString() {
+        return "ID: " + this.id_user + " Nombre: " + this.nombre_user;
     }
-    
-    
 }

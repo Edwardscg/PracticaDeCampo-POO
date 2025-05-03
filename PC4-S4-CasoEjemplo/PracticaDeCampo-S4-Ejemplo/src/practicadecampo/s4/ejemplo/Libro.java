@@ -13,15 +13,13 @@ public class Libro {
     private String titulo;
     private String autor;
     private boolean disponibilidad;
-    
+
     public int getId_libro() {
         return id_libro;
     }
 
     public void setId_libro(int id_libro) {
         this.id_libro = id_libro;
-        
-        
     }
 
     public String getTitulo() {
@@ -44,20 +42,13 @@ public class Libro {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean dispo) {
-        
-        this.disponibilidad = dispo;
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
-    
-    void Disponibilidad(Usuario u, Libro l){
-        if(u.getLista_libros_prestados().contains(l)){
-            this.disponibilidad = false;
-        }else{
-            this.disponibilidad = true;
-        }
-        
+
+    public String toString() {
+        return "ID: " + id_libro + ", Título: " + titulo + ", Autor: " + autor + ", Disponibilidad: " + (disponibilidad ? "Disponible" : "No disponible");
     }
-    
     
     
 }

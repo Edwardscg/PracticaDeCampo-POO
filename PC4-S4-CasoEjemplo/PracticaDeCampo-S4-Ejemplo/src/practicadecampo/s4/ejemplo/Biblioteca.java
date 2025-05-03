@@ -9,58 +9,76 @@ import java.util.ArrayList;
  * @author Edward
  */
 public class Biblioteca{
-    ArrayList<Libro> lista_libros = new ArrayList();
-    ArrayList<Usuario> lista_usuarios = new ArrayList();   
-    
-    void RegistrarLibro(Libro libro){
-   
+    private ArrayList<Libro> lista_libros = new ArrayList<>();
+    private ArrayList<Usuario> lista_usuarios = new ArrayList<>();
+
+    void RegistrarLibro(Libro libro) {
         lista_libros.add(libro);
     }
-    
-    void RegistrarUsuario(Usuario u){
+
+    void RegistrarUsuario(Usuario u) {
         lista_usuarios.add(u);
     }
-    
-    void PrestarLibro (String titulo_prestar, Usuario u, Libro l){
-        if(u.getCantidadLibros_prestados() <= 3){
-            if (l.getDisponibilidad()){
-                u.setLista_libros_prestados(l);
+
+    void PrestarLibro(String titulo_prestar, Usuario u, Libro l) {
+        if (u.getCantidadLibros_prestados() < 3) {
+            if (l.getDisponibilidad()) {
+                u.AdquirirLibro(l);
                 l.setDisponibilidad(false);
-            }else{System.out.println("Libro no disponible actualmente, regrese en otro momento...");} 
-        }else{System.out.println("Limite de libros alcanzado");} 
-    }
-    
-    void DevolverLibro (String titulo_devolver, Usuario u){
-        for(Libro l : lista_libros){
-            if(l.getTitulo()==titulo_devolver){
-                u.DevolverLibro(l); 
-            }else {
-                System.out.println("Libro no existente, asegurese de escribir el nombre correcto del libro a devolver");
+                System.out.println("Libro prestado con éxito.");
+            } else {
+                System.out.println("Libro no disponible actualmente.");
             }
-        }  
-    }
-    
-    void LibrosDisponibles (){
-        for(Libro l : lista_libros){
-            if(l.getDisponibilidad() == true){
-                System.out.println("Lista de Libros Disponibles: \n" + l);
-            }
-        }
-    } 
-    
-    void LibrosPrestadosPorUsuario(){
-        for(Usuario u : lista_usuarios){
-            System.out.println("Usuario " + u.getId_user() + ":\n" + u.getNombre_user());
-            System.out.println("Libros Prestados: \n");
-            u.getLista_libros_prestados();
+        } else {
+            System.out.println("Limite de libros alcanzado.");
         }
     }
-    
-    ArrayList<Usuario> ObtenerUsuario(){
+
+    void DevolverLibro(String titulo_devolver, Usuario u) {
+        for (Libro l : lista_libros) {
+            if (l.getTitulo().equalsIgnoreCase(titulo_devolver)) {
+                if (u.getLista_libros_prestados().contains(l)) {
+                    u.DevolverLibro(l);
+                    l.setDisponibilidad(true);
+                    System.out.println("Libro devuelto con éxito.");
+                    return;
+                } else {
+                    System.out.println("Este usuario no tiene prestado este libro.");
+                    return;
+                }
+            }
+        }
+        System.out.println("Libro no encontrado.");
+    }
+
+    void LibrosDisponibles() {
+        System.out.println("Lista de Libros Disponibles:");
+        for (Libro l : lista_libros) {
+            if (l.getDisponibilidad()) {
+                System.out.println(l);
+            }
+        }
+    }
+
+    Usuario buscarUsuarioPorId(int id) {
+        for (Usuario u : lista_usuarios) {
+            if (u.getId_user() == id) return u;
+        }
+        return null;
+    }
+
+    Libro buscarLibroPorTitulo(String titulo) {
+        for (Libro l : lista_libros) {
+            if (l.getTitulo().equalsIgnoreCase(titulo)) return l;
+        }
+        return null;
+    }
+
+    ArrayList<Usuario> ObtenerUsuario() {
         return lista_usuarios;
     }
-    
-    ArrayList<Libro> ObtenerLibro(){
+
+    ArrayList<Libro> ObtenerLibro() {
         return lista_libros;
     }
     
