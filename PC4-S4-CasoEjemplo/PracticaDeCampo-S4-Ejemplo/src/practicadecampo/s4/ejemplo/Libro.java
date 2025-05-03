@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package practicadecampo.s4.ejemplo;
-import java.util.ArrayList;
 /**
  *
  * @author Edward

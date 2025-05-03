@@ -5,7 +5,6 @@
 package practicadecampo.s4.ejemplo;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
  *
@@ -99,19 +98,26 @@ public class PracticaDeCampoS4Ejemplo {
                     break;
 
                 case "6":
-                    System.out.print("Ingrese el ID del usuario para ver sus libros prestados: ");
-                    int id_usuario_libros = Integer.parseInt(sc.nextLine());
-                    Usuario usuario_libros = b.buscarUsuarioPorId(id_usuario_libros);
-                    if (usuario_libros != null) {
-                        System.out.println("Libros prestados por " + usuario_libros.getNombre_user() + ":");
-                        for (Libro libro_prestado : usuario_libros.getLista_libros_prestados()) {
-                            System.out.println("- " + libro_prestado.getTitulo());
+                    while (true) {
+                        try {
+                            System.out.print("Ingrese el ID del usuario para ver sus libros prestados: ");
+                            int id_usuario_libros = Integer.parseInt(sc.nextLine());
+                            Usuario usuario_libros = b.buscarUsuarioPorId(id_usuario_libros);
+                            if (usuario_libros != null) {
+                                System.out.println("Libros prestados por " + usuario_libros.getNombre_user() + ":");
+                                for (Libro libro_prestado : usuario_libros.getLista_libros_prestados()) {
+                                    System.out.println("- " + libro_prestado.getTitulo());
+                                }
+                            } else {
+                                System.out.println("Usuario no encontrado.");         
+                            }
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("Error: Ingrese un numero valido.");
                         }
-                    } else {
-                        System.out.println("Usuario no encontrado.");
                     }
                     break;
-
+                            
                 case "7":
                     System.out.println("Saliendo del sistema...");
                     sc.close();
