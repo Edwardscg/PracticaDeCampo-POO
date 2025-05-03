@@ -22,7 +22,7 @@ public class PracticaDeCampoS4Ejemplo {
         Libro l = new Libro();
         Biblioteca b = new Biblioteca();
         
-        System.out.println("BIENVENIDO A LA BIBLIOTECA");
+        System.out.println("BIENVENIDO");
         System.out.println("Que accion desea realizar?");
         
         System.out.println("1. Registrar Libro");
