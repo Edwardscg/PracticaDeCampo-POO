@@ -8,10 +8,15 @@ package practicadecampo.s4.ejemplo;
  * @author Edward
  */
 public class Libro {
+    
+    // Atributos de la clase Libro encapsualdos //
+    
     private int id_libro;
     private String titulo;
     private String autor;
     private boolean disponibilidad;
+    
+        // Getters y Setters //
 
     public int getId_libro() {
         return id_libro;
@@ -45,6 +50,8 @@ public class Libro {
         this.disponibilidad = disponibilidad;
     }
 
+    // Metodo para mostrar datos de los libros //
+    
     public String toString() {
         return "ID: " + id_libro + ", Título: " + titulo + ", Autor: " + autor + ", Disponibilidad: " + (disponibilidad ? "Disponible" : "No disponible");
     }

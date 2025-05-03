@@ -9,24 +9,17 @@ import java.util.ArrayList;
  * @author Edward
  */
 public class Usuario {
+    // Atributos de la clase Usuario encapsualdos // 
     
     private int id_user;
     private String nombre_user;
     private int cantidad_libros_prestados;
     private ArrayList<Libro> lista_libros_prestados = new ArrayList<>();
+    
+    // Getters y Setters //
 
     public ArrayList<Libro> getLista_libros_prestados() {
         return lista_libros_prestados;
-    }
-
-    public void AdquirirLibro(Libro libro) {
-        lista_libros_prestados.add(libro);
-        this.cantidad_libros_prestados++;
-    }
-
-    public void DevolverLibro(Libro libro) {
-        lista_libros_prestados.remove(libro);
-        this.cantidad_libros_prestados--;
     }
 
     public int getId_user() {
@@ -48,6 +41,20 @@ public class Usuario {
     public int getCantidadLibros_prestados() {
         return cantidad_libros_prestados;
     }
+    
+    // Metodos de adquisición y eevolución de libros //
+    
+    public void AdquirirLibro(Libro libro) {
+        lista_libros_prestados.add(libro);
+        this.cantidad_libros_prestados++;
+    }
+
+    public void DevolverLibro(Libro libro) {
+        lista_libros_prestados.remove(libro);
+        this.cantidad_libros_prestados--;
+    }
+    
+    // Metodo para mostrar datos de los libros //
 
     public String toString() {
         return "ID: " + this.id_user + " Nombre: " + this.nombre_user;
