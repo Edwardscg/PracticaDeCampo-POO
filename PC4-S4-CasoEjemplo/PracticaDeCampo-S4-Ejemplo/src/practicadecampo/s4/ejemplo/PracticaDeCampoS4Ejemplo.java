@@ -14,6 +14,8 @@ public class PracticaDeCampoS4Ejemplo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*Programa inspirado en una biblioteca
+        */
         
         
         Scanner sc = new Scanner(System.in);
